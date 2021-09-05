@@ -1,0 +1,38 @@
+.mat-menu-trigger
+  position: relative
+  display: flex
+  justify-content: flex-start
+  width: 40px
+  border: none
+  background-color: inherit
+  &::before
+    content: ''
+    position: absolute
+    top: 6px
+    right: 0
+    display: inline-block
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 5px 3px 0 3px
+    border-color: #000000 transparent transparent transparent
+.mat-menu-item
+  display: flex
+  align-items: center
+.header
+  &-not-button
+    cursor: default
+  &__contacts
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 270px
+    padding: 0 15px
+    border-right: 1px solid #e9ebee
+  &__viber,
+  &__a1
+    display: flex
+    align-items: center
+    justify-content: space-between
+    text-decoration: none
+    color: black
