@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 export interface User {
   name: string;
@@ -16,15 +15,11 @@ export interface User {
 export class SearchComponent implements OnInit {
   myControl = new FormControl();
   options: User[] = [
-    { name: 'Mary' },
-    { name: 'Shelley' },
-    { name: 'Igor' }
+    {name: 'Mary'},
+    {name: 'Shelley'},
+    {name: 'Igor'}
   ];
-  filteredOptions: Observable<User[]>;
-
-  constructor() {
-    this.filteredOptions = this.myControl.valueChanges;
-  }
+  filteredOptions: Observable<User[]> = new Observable;
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges

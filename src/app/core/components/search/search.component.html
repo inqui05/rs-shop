@@ -1,7 +1,8 @@
+<img src="../../../../assets/search.svg" alt="искать" class="form-image">
+<img src="../../../../assets/close.svg" alt="отчистить поиск" class="form-image-clean">
 <form class="example-form">
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Assignee</mat-label>
-    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" placeholder="Поиск товаров">
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
         {{option.name}}
