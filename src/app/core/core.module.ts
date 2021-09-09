@@ -9,6 +9,7 @@ import { LocationComponent } from './components/location/location.component';
 import { SearchComponent } from './components/search/search.component';
 import { MaterialModule } from './material/material.module';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     CatalogComponent,
     SearchComponent,
     UserProfileComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
   ],
   exports: [
     HeaderComponent,
+    FooterComponent,
     MaterialModule,
   ]
 })
