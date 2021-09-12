@@ -1,7 +1,4 @@
-export interface VideosInfo {
-}
-
-interface Good {
+export interface IGood {
   id: string,
   name: string,
   imageUrls: string[],
