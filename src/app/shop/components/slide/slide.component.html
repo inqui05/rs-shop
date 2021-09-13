@@ -1,0 +1,10 @@
+<a [routerLink]="['goods/item/', data.id]" *ngIf="data" class="slide">
+  <div class="image-container">
+    <img [src]="data.imageUrls[0]" [alt]="data.name" class="image">
+  </div>
+  <div class="information">
+    <p class="name">{{data.name}}</p>
+    <p class="rating">Рейтинг: {{data.rating | number: '1.1-1'}}/5.0</p>
+  </div>
+</a>
+

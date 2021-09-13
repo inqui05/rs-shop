@@ -1,4 +1,17 @@
 <main class="main-page">
-  <app-slider></app-slider>
+  <swiper
+      [spaceBetween]="30"
+      [centeredSlides]="true"
+      [autoplay]="{
+        delay: 2500,
+        disableOnInteraction: false
+      }"
+      [pagination]="{
+        clickable: true
+      }"
+      class="mySwiper">
+      <ng-template *ngFor="let item of randomGoods" swiperSlide><app-slide [data]="item"></app-slide></ng-template>
 
+</swiper>
+<!--   <div class="try" *ngFor="let item of randomGoods">{{item.name}}</div> -->
 </main>

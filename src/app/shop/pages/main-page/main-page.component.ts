@@ -1,10 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
+import { forkJoin, Observable } from 'rxjs';
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
+
+import { IGood } from '../../models/goods.model';
+import { GetDataService } from '../../services/get-data.service';
+
+SwiperCore.use([Autoplay, Pagination]);
+
+const MAX_RATING = 5;
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.sass']
+  styleUrls: ['./main-page.component.sass'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class MainPageComponent{
+export class MainPageComponent implements OnInit{
+  public randomGoods: IGood[] = [];
 
+  public favoriteGoods: IGood[] = [];
+
+  constructor(public service: GetDataService) {}
+
+  ngOnInit() {
+    this.getDataForSliders();
+  }
+
+  private getDataForSliders(): void {
+    const observables: Observable<IGood[]>[] = [];
+
+    this.service.getCategories().subscribe((data) => {
+      this.service.categories = data;
+      data.forEach(
+        (item) => item.subCategories.forEach(
+          (elem) => observables.push(this.service.getGoods(`${item.id}/${elem.id}`))));
+
+      forkJoin(observables).subscribe((val) => {
+        const allGoods: IGood[] = [];
+        val.forEach((element) => allGoods.push(...element));
+
+        this.favoriteGoods = allGoods.filter((element) => element.rating === MAX_RATING);
+        this.randomGoods = allGoods.sort(() => Math.random() - 0.5).slice(0,10);
+      });
+    });
+  }
 }
