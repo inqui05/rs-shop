@@ -12,6 +12,9 @@
       }"
       class="mySwiper">
       <ng-template *ngFor="let item of randomGoods" swiperSlide><app-slide [data]="item"></app-slide></ng-template>
-
   </swiper>
+  <div class="slider-title second-title">Популярные товары</div>
+  <swiper [navigation]="true" class="myFavorite">
+    <ng-template *ngFor="let item of favoriteGoods" swiperSlide>{{item[0].name}}</ng-template>
+</swiper>
 </main>

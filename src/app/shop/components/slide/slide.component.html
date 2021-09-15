@@ -4,7 +4,6 @@
   </div>
   <div class="information">
     <p class="name">{{data.name}}</p>
-    <!-- <p class="rating">Рейтинг: {{data.rating | number: '1.1-1'}}/5.0</p> -->
     <div class="rating" *ngIf="data.rating >= 4.5">Рейтинг:&nbsp;
       <div class="rating-image">
         <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
