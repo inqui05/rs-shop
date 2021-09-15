@@ -1,4 +1,5 @@
 <main class="main-page">
+  <div class="slider-title">Случайный товар</div>
   <swiper
       [spaceBetween]="30"
       [centeredSlides]="true"
@@ -12,6 +13,5 @@
       class="mySwiper">
       <ng-template *ngFor="let item of randomGoods" swiperSlide><app-slide [data]="item"></app-slide></ng-template>
 
-</swiper>
-<!--   <div class="try" *ngFor="let item of randomGoods">{{item.name}}</div> -->
+  </swiper>
 </main>

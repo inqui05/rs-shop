@@ -4,7 +4,66 @@
   </div>
   <div class="information">
     <p class="name">{{data.name}}</p>
-    <p class="rating">Рейтинг: {{data.rating | number: '1.1-1'}}/5.0</p>
+    <!-- <p class="rating">Рейтинг: {{data.rating | number: '1.1-1'}}/5.0</p> -->
+    <div class="rating" *ngIf="data.rating >= 4.5">Рейтинг:&nbsp;
+      <div class="rating-image">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      </div>
+    </div>
+    <div class="rating" *ngIf="data.rating >= 3.5 && data.rating <= 4.5">Рейтинг:&nbsp;
+      <div class="rating-image">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      </div>
+    </div>
+    <div class="rating" *ngIf="data.rating >= 2.5 && data.rating <= 3.5">Рейтинг:&nbsp;
+      <div class="rating-image">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      </div>
+    </div>
+    <div class="rating" *ngIf="data.rating >= 1.5 && data.rating <= 2.5">Рейтинг:&nbsp;
+      <div class="rating-image">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      </div>
+    </div>
+    <div class="rating" *ngIf="data.rating >= 0.5 && data.rating <= 1.5">Рейтинг:&nbsp;
+      <div class="rating-image">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      </div>
+    </div>
+    <div class="rating" *ngIf="data.rating < 0.5">Рейтинг:&nbsp;
+      <div class="rating-image">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+        <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      </div>
+    </div>
+    <div class="price">Стоимость:&nbsp;<p class="price-value">{{data.price}} руб.</p></div>
+  </div>
+  <div class="description">
+    <div class="title">Особенности товара:</div>
+    <p>{{data.description}}</p>
   </div>
 </a>
 
