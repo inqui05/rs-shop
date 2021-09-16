@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IGood } from '../../models/goods.model';
 
 @Component({
   selector: 'app-favorite-slide',
   templateUrl: './favorite-slide.component.html',
   styleUrls: ['./favorite-slide.component.sass']
 })
-export class FavoriteSlideComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class FavoriteSlideComponent {
+  @Input() data?: IGood;
 }

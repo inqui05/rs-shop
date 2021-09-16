@@ -1,1 +1,16 @@
-<p>favorite-slide works!</p>
+<a [routerLink]="['goods/item/', data.id]" class="slide-wrapper" *ngIf="data">
+  <div class="image-container">
+    <img [src]="data.imageUrls[0]" alt="фотография товара" class="image">
+  </div>
+  <div class="information">
+    <div class="title">{{data.name}}</div>
+    <div class="rating-image">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+        <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      </div>
+      <div class="price">{{data.price}} руб.</div>
+  </div>
+</a>
