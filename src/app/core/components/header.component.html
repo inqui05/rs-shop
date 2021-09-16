@@ -13,7 +13,7 @@
   </div>
   <div class="header__navigation-wrapper">
     <div class="header__navigation">
-      <a class="header__logo-wrapper">
+      <a [routerLink]="['/']" class="header__logo-wrapper">
         <img src="../../../assets/logo.svg" alt="логотип" class="header__logo">
       </a>
       <app-catalog></app-catalog>
@@ -22,14 +22,9 @@
       <a href="#" class="basket"><img src="../../../../assets/basket.svg" alt="Моя корзина" class="icon"><span>Корзина</span></a>
     </div>
   </div>
-<div class="header__menu-wrapper">
-  <div class="header__menu">
-    <a href="#" class="header__menu-item">Бытовая техника</a>
-    <a href="#" class="header__menu-item">Электроника</a>
-    <a href="#" class="header__menu-item">Компьютеры и периферия</a>
-    <a href="#" class="header__menu-item">Мебель</a>
-    <a href="#" class="header__menu-item">Досуг и хобби</a>
+  <div class="header__menu-wrapper">
+    <div class="header__menu" *ngIf="service.categories.length">
+      <a [routerLink]="['goods/', category.id]" *ngFor="let category of service.categories" class="header__menu-item">{{category.name}}</a>
+    </div>
   </div>
-</div>
-
 </header>
