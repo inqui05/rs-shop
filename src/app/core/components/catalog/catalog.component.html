@@ -6,47 +6,29 @@
 </button>
 
 <mat-menu #animals="matMenu">
-  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-  <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+  <button mat-menu-item [matMenuTriggerFor]="appliances"><img src="../../../../assets/appliances.svg" alt="Бытовая техника" class="category-image">&nbsp;Бытовая техника</button>
+  <button mat-menu-item [matMenuTriggerFor]="electronics"><img src="../../../../assets/electronics.svg" alt="Бытовая техника" class="category-image">&nbsp;Электроника</button>
+  <button mat-menu-item [matMenuTriggerFor]="computers"><img src="../../../../assets/computers.svg" alt="Бытовая техника" class="category-image">&nbsp;Компьютеры и периферия</button>
+  <button mat-menu-item [matMenuTriggerFor]="furniture"><img src="../../../../assets/furniture.svg" alt="Бытовая техника" class="category-image">&nbsp;Мебель</button>
+  <button mat-menu-item [matMenuTriggerFor]="hobbies"><img src="../../../../assets/hobby.svg" alt="Бытовая техника" class="category-image">&nbsp;Досуг и хобби</button>
 </mat-menu>
 
-<mat-menu #vertebrates="matMenu">
-  <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-  <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
-  <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
-  <button mat-menu-item>Birds</button>
-  <button mat-menu-item>Mammals</button>
+<mat-menu #appliances="matMenu">
+  <a [routerLink]="['category/', category.id]" *ngFor="let category of service.categories[0].subCategories" mat-menu-item>{{category.name}}</a>
 </mat-menu>
 
-<mat-menu #invertebrates="matMenu">
-  <button mat-menu-item>Insects</button>
-  <button mat-menu-item>Molluscs</button>
-  <button mat-menu-item>Crustaceans</button>
-  <button mat-menu-item>Corals</button>
-  <button mat-menu-item>Arachnids</button>
-  <button mat-menu-item>Velvet worms</button>
-  <button mat-menu-item>Horseshoe crabs</button>
+<mat-menu #electronics="matMenu">
+  <a [routerLink]="['category/', category.id]" *ngFor="let category of service.categories[1].subCategories" mat-menu-item>{{category.name}}</a>
 </mat-menu>
 
-<mat-menu #fish="matMenu">
-  <button mat-menu-item>Baikal oilfish</button>
-  <button mat-menu-item>Bala shark</button>
-  <button mat-menu-item>Ballan wrasse</button>
-  <button mat-menu-item>Bamboo shark</button>
-  <button mat-menu-item>Banded killifish</button>
+<mat-menu #computers="matMenu">
+  <a [routerLink]="['category/', category.id]" *ngFor="let category of service.categories[2].subCategories" mat-menu-item>{{category.name}}</a>
 </mat-menu>
 
-<mat-menu #amphibians="matMenu">
-  <button mat-menu-item>Sonoran desert toad</button>
-  <button mat-menu-item>Western toad</button>
-  <button mat-menu-item>Arroyo toad</button>
-  <button mat-menu-item>Yosemite toad</button>
+<mat-menu #furniture="matMenu">
+  <a [routerLink]="['category/', category.id]" *ngFor="let category of service.categories[3].subCategories" mat-menu-item>{{category.name}}</a>
 </mat-menu>
 
-<mat-menu #reptiles="matMenu">
-  <button mat-menu-item>Banded Day Gecko</button>
-  <button mat-menu-item>Banded Gila Monster</button>
-  <button mat-menu-item>Black Tree Monitor</button>
-  <button mat-menu-item>Blue Spiny Lizard</button>
-  <button mat-menu-item disabled>Velociraptor</button>
+<mat-menu #hobbies="matMenu">
+  <a [routerLink]="['category/', category.id]" *ngFor="let category of service.categories[4].subCategories" mat-menu-item>{{category.name}}</a>
 </mat-menu>

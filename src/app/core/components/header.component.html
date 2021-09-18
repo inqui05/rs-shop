@@ -24,7 +24,7 @@
   </div>
   <div class="header__menu-wrapper">
     <div class="header__menu" *ngIf="service.categories.length">
-      <a [routerLink]="['goods/', category.id]" *ngFor="let category of service.categories" class="header__menu-item">{{category.name}}</a>
+      <a [routerLink]="['category/', category.id]" *ngFor="let category of service.categories" class="header__menu-item">{{category.name}}</a>
     </div>
   </div>
 </header>

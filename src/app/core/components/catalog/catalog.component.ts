@@ -1,4 +1,6 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
+
+import { GetDataService } from 'src/app/shop/services/get-data.service';
 
 @Component({
   selector: 'app-catalog',
@@ -6,4 +8,5 @@ import { Component} from '@angular/core';
   styleUrls: ['./catalog.component.sass']
 })
 export class CatalogComponent {
+  constructor(public service: GetDataService) {}
 }
