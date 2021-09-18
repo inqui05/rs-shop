@@ -8,12 +8,14 @@ import { SwiperModule } from 'swiper/angular';
 import { SlideComponent } from './components/slide/slide.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FavoriteSlideComponent } from './components/favorite-slide/favorite-slide.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 @NgModule({
   declarations: [
     MainPageComponent,
     SlideComponent,
     FavoriteSlideComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
