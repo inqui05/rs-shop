@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { UntilDestroy } from '@ngneat/until-destroy';
 
 import { forkJoin, Observable } from 'rxjs';
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
@@ -10,6 +11,7 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const MAX_RATING = 5;
 
+@UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',

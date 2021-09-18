@@ -1,9 +1,42 @@
-<button class="header__location">
+<button class="header__location" mat-button [matMenuTriggerFor]="animals">
   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="13" viewBox="0 0 10 13" class="location">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5L10 5.00001C10 5.28878 9.97552 5.57184 9.92852 5.84721C9.31782 9.54574
       5 13 5 13C5 13 0.68203 9.54563 0.0714481 5.84702C0.02447 5.57171 0 5.28871 0 5.00001V5C0 2.23858 2.23858 0 5 0C7.76142 0 10
       2.23858 10 5ZM5 7C6.10457 7 7 6.10457 7 5C7 3.89543 6.10457 3 5 3C3.89543 3 3 3.89543 3 5C3 6.10457 3.89543 7 5 7Z">
     </path>
   </svg>
-  <p class="header__location-name">Минск</p>
+  <p class="header__location-name">{{location}}</p>
 </button>
+
+<mat-menu #animals="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="brestRegion">Брестская область</button>
+  <button mat-menu-item [matMenuTriggerFor]="vitebskRegion">Витебская область</button>
+  <button mat-menu-item [matMenuTriggerFor]="gomelRegion">Гомельская область</button>
+  <button mat-menu-item [matMenuTriggerFor]="grodnoRegion">Гродненская область</button>
+  <button mat-menu-item [matMenuTriggerFor]="minskRegion">Минская область</button>
+  <button mat-menu-item [matMenuTriggerFor]="mogilevRegion">Могилевская область</button>
+</mat-menu>
+
+<mat-menu #brestRegion="matMenu">
+  <button mat-menu-item *ngFor="let city of cities.brestRegion" (click)="changeCity($event)">{{city}}</button>
+</mat-menu>
+
+<mat-menu #vitebskRegion="matMenu">
+  <button mat-menu-item *ngFor="let city of cities.vitebskRegion" (click)="changeCity($event)">{{city}}</button>
+</mat-menu>
+
+<mat-menu #gomelRegion="matMenu">
+  <button mat-menu-item *ngFor="let city of cities.gomelRegion" (click)="changeCity($event)">{{city}}</button>
+</mat-menu>
+
+<mat-menu #grodnoRegion="matMenu">
+  <button mat-menu-item *ngFor="let city of cities.grodnoRegion" (click)="changeCity($event)">{{city}}</button>
+</mat-menu>
+
+<mat-menu #minskRegion="matMenu">
+  <button mat-menu-item *ngFor="let city of cities.minskRegion" (click)="changeCity($event)">{{city}}</button>
+</mat-menu>
+
+<mat-menu #mogilevRegion="matMenu">
+  <button mat-menu-item *ngFor="let city of cities.mogilevRegion" (click)="changeCity($event)">{{city}}</button>
+</mat-menu>
