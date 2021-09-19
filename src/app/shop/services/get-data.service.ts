@@ -14,6 +14,14 @@ const PATH = 'http://localhost:3004/';
 export class GetDataService {
   public categories: ICategory[] = [];
 
+  public category: ICategory | null = null;
+
+  public subCategory: string = '';
+
+  public categorysGoods: IGood[] = [];
+
+  public displayedGoods: IGood[] = [];
+
   constructor(private http: HttpClient) { }
 
   public getCategories(): Observable<ICategory[]> {
@@ -22,5 +30,9 @@ export class GetDataService {
 
   public getGoods(category: string): Observable<IGood[]> {
     return this.http.get<IGood[]>(`${PATH}goods/category/${category}`);
+  }
+
+  public getCategoryData(id: string): Observable<ICategory>  {
+    return this.http.get<ICategory>(`${PATH}categories/${id}`);
   }
 }

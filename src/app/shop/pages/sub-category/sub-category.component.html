@@ -1,0 +1,17 @@
+<div class="category-wrapper">
+  <div class="breadcrumbs">
+    <a [routerLink]="['/']" class="breadcrumbs-item">Главная страница</a>
+    <p class="breadcrumbs-item">></p>
+    <a href="" class="category" *ngIf="service.category" class="breadcrumbs-item">{{service.category.name}}</a>
+  </div>
+  <h1 class="category-name">{{service.subCategory}}</h1>
+  <div class="filter">
+    <p class="filter-name">Сортировать по:</p>
+    <button class="filter-target">цене</button>
+    <button class="filter-target">популярности</button>
+  </div>
+  <div class="card-wrapper">
+    <app-card *ngFor="let good of service.displayedGoods" [data]="good"></app-card>
+    <button class="show-more" *ngIf="!isMaxCount" (click)="showMoreCard()">Показать больше</button>
+  </div>
+</div>

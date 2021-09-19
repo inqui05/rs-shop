@@ -2,8 +2,8 @@
   <div class="breadcrumbs">
     <a [routerLink]="['/']" class="main-page">Главная страница</a>
   </div>
-  <h1 class="category-name" *ngIf="category">{{category.name}}</h1>
-  <ol class="subcategories" *ngIf="category">
-    <li class="subcategory" *ngFor="let item of category.subCategories"> <a [routerLink]="['/category/sub/', item.id]" class="subcategory-link">{{item.name}}</a></li>
+  <h1 class="category-name" *ngIf="service.category">{{service.category.name}}</h1>
+  <ol class="subcategories" *ngIf="service.category">
+    <li class="subcategory" *ngFor="let item of service.category.subCategories"><a [routerLink]="['/category/sub/', item.id]" [queryParams]="{category: service.category.id, subCategory: item.id}" class="subcategory-link">{{item.name}}</a></li>
   </ol>
 </div>

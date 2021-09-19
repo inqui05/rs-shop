@@ -9,6 +9,10 @@ import { SlideComponent } from './components/slide/slide.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FavoriteSlideComponent } from './components/favorite-slide/favorite-slide.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
+import { CardComponent } from './components/card/card.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { ButtonsComponent } from './components/buttons/buttons.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,10 @@ import { CategoryComponent } from './pages/category/category.component';
     SlideComponent,
     FavoriteSlideComponent,
     CategoryComponent,
+    SubCategoryComponent,
+    CardComponent,
+    RatingComponent,
+    ButtonsComponent,
   ],
   imports: [
     BrowserModule,
