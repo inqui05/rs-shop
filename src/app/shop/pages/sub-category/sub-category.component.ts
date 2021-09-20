@@ -31,12 +31,12 @@ export class SubCategoryComponent implements OnInit {
       });
       this.service.getGoods(`${params.category}/${params.subCategory}`).subscribe((data) => {
         this.service.categorysGoods = data;
-        this.cutGoods(data);
+        this.cutGoodsArr(data);
       });
     });
   }
 
-  private cutGoods(data: IGood[]): void {
+  private cutGoodsArr(data: IGood[]): void {
     if (data.length > this.goodsCounts) {
       this.service.displayedGoods = data.slice(0, this.goodsCounts);
     } else {
@@ -47,6 +47,14 @@ export class SubCategoryComponent implements OnInit {
 
   public showMoreCard(): void {
     this.goodsCounts += 10;
-    this.cutGoods(this.service.categorysGoods);
+    this.cutGoodsArr(this.service.categorysGoods);
+  }
+
+  public sortByPrice() {
+    this.service.sortByPrice(this.goodsCounts);
+  }
+
+  public sortByRating() {
+    this.service.sortByRating(this.goodsCounts);
   }
 }

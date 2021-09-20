@@ -7,8 +7,8 @@
   <h1 class="category-name">{{service.subCategory}}</h1>
   <div class="filter">
     <p class="filter-name">Сортировать по:</p>
-    <button class="filter-target">цене</button>
-    <button class="filter-target">популярности</button>
+    <button class="filter-target" (click)="sortByPrice()">цене</button>
+    <button class="filter-target" (click)="sortByRating()">популярности</button>
   </div>
   <div class="card-wrapper">
     <app-card *ngFor="let good of service.displayedGoods" [data]="good"></app-card>
