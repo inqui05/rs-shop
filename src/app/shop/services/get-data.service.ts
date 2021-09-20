@@ -36,6 +36,10 @@ export class GetDataService {
     return this.http.get<IGood[]>(`${PATH}goods/category/${category}`);
   }
 
+  public getGood(id: string): Observable<IGood> {
+    return this.http.get<IGood>(`${PATH}goods/item/${id}`);
+  }
+
   public getCategoryData(id: string): Observable<ICategory>  {
     return this.http.get<ICategory>(`${PATH}categories/${id}`);
   }

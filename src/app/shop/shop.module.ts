@@ -14,6 +14,7 @@ import { CardComponent } from './components/card/card.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { AvailableNowDirective } from './directives/available-now.directive';
+import { GoodComponent } from './pages/good/good.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AvailableNowDirective } from './directives/available-now.directive';
     RatingComponent,
     ButtonsComponent,
     AvailableNowDirective,
+    GoodComponent,
   ],
   imports: [
     BrowserModule,
