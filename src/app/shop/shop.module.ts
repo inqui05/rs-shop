@@ -13,6 +13,7 @@ import { SubCategoryComponent } from './pages/sub-category/sub-category.componen
 import { CardComponent } from './components/card/card.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { AvailableNowDirective } from './directives/available-now.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
     CardComponent,
     RatingComponent,
     ButtonsComponent,
+    AvailableNowDirective,
   ],
   imports: [
     BrowserModule,
