@@ -1,14 +1,13 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
-import { SwiperComponent } from "swiper/angular";
 
-import SwiperCore, { Pagination } from "swiper";
-
-SwiperCore.use([Pagination]);
+import SwiperCore, { Pagination } from 'swiper';
 
 import { IGood } from '../../models/goods.model';
 import { GetDataService } from '../../services/get-data.service';
+
+SwiperCore.use([Pagination]);
 
 @UntilDestroy({ checkProperties: true })
 @Component({
