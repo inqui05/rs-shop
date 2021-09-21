@@ -1,8 +1,8 @@
 <div class="card" *ngIf="data">
   <div class="image-container">
     <img [src]="data.imageUrls[0]" alt="фотография товара" class="image">
-    <div class="image-favorite">
-      <img src="../../../../assets/favorite.png" alt="топ товар" class="favorite" *ngIf="data.rating === 5">
+    <div class="image-favorite" *ngIf="data.rating === 5">
+      <img src="../../../../assets/favorite.png" alt="топ товар" class="favorite">
     </div>
   </div>
   <a [routerLink]="['/good/', data.id]" class="title">{{data.name}}</a>

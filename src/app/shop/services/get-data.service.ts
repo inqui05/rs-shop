@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { ICategory } from '../models/categories.model';
+import { ICategory, ISubCategory } from '../models/categories.model';
 import { IGood } from '../models/goods.model';
 
 const PATH = 'http://localhost:3004/';
@@ -12,11 +12,15 @@ const PATH = 'http://localhost:3004/';
   providedIn: 'root'
 })
 export class GetDataService {
+  public randomGoods: IGood[] = [];
+
+  public favoriteGoods: Array<IGood[]> = [];
+
   public categories: ICategory[] = [];
 
   public category: ICategory | null = null;
 
-  public subCategory: string = '';
+  public subCategory: ISubCategory | null = null;
 
   public categorysGoods: IGood[] = [];
 

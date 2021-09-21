@@ -1,6 +1,6 @@
 <main class="main-page">
   <div class="slider-title">Случайный товар</div>
-  <swiper *ngIf="randomGoods.length; else loading"
+  <swiper *ngIf="service.randomGoods.length; else loading"
       [spaceBetween]="30"
       [centeredSlides]="true"
       [autoplay]="{
@@ -11,11 +11,11 @@
         clickable: true
       }"
       class="mySwiper">
-      <ng-template *ngFor="let item of randomGoods" swiperSlide><app-slide [data]="item"></app-slide></ng-template>
+      <ng-template *ngFor="let item of service.randomGoods" swiperSlide class="random-slide"><app-slide [data]="item"></app-slide></ng-template>
   </swiper>
   <div class="slider-title second-title">Популярные товары</div>
-  <swiper [navigation]="true" class="myFavorite" *ngIf="randomGoods.length; else loading">
-    <ng-template class="favorite-slide" *ngFor="let item of favoriteGoods" swiperSlide>
+  <swiper [navigation]="true" class="myFavorite" *ngIf="service.randomGoods.length; else loading">
+    <ng-template class="favorite-slide" *ngFor="let item of service.favoriteGoods" swiperSlide>
       <app-favorite-slide *ngFor="let element of item" [data]="element"></app-favorite-slide>
     </ng-template>
   </swiper>

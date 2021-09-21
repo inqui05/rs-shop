@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
+import { SwiperComponent } from "swiper/angular";
+
+import SwiperCore, { Pagination } from "swiper";
+
+SwiperCore.use([Pagination]);
 
 import { IGood } from '../../models/goods.model';
 import { GetDataService } from '../../services/get-data.service';
@@ -9,7 +14,8 @@ import { GetDataService } from '../../services/get-data.service';
 @Component({
   selector: 'app-good',
   templateUrl: './good.component.html',
-  styleUrls: ['./good.component.sass']
+  styleUrls: ['./good.component.sass'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class GoodComponent implements OnInit {
   good: IGood | null = null;
@@ -18,14 +24,14 @@ export class GoodComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      this.service.getGood(params.category).subscribe((data) => {
+      this.service.getGood(params.id).subscribe((data) => {
         this.good = data;
         this.service.getCategories().subscribe((value) => {
           const category = value.find((item) => item.id === data.category);
           if (category) {
             this.service.category = category;
             const subCategory = category.subCategories.find((item) => item.id === data.subCategory);
-            if (subCategory) this.service.subCategory = subCategory.name;
+            if (subCategory) this.service.subCategory = subCategory;
           }
         });
       });

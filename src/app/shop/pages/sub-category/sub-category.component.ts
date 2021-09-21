@@ -26,7 +26,7 @@ export class SubCategoryComponent implements OnInit {
         if (category) {
           this.service.category = category;
           const subCategory = category.subCategories.find((item) => item.id === params.subCategory);
-          if (subCategory) this.service.subCategory = subCategory.name;
+          if (subCategory) this.service.subCategory = subCategory;
         }
       });
       this.service.getGoods(`${params.category}/${params.subCategory}`).subscribe((data) => {

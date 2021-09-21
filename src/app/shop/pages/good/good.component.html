@@ -1,9 +1,22 @@
 <div class="good-wrapper">
-  <div class="breadcrumbs">
+  <div class="breadcrumbs" *ngIf="service.category && service.subCategory">
     <a [routerLink]="['/']" class="breadcrumbs-item">Главная страница</a>
     <p class="breadcrumbs-item">></p>
-    <a [routerLink]="['category/', service.category.id]" class="category" *ngIf="service.category" class="breadcrumbs-item">{{service.category.name}}</a>
+    <a [routerLink]="['/category/', service.category.id]" class="category" class="breadcrumbs-item">{{service.category.name}}</a>
     <p class="breadcrumbs-item">></p>
-    <a href="" class="category" *ngIf="service.subCategory" class="breadcrumbs-item">{{service.subCategory}}</a>
+    <a [routerLink]="['/category/sub/', service.subCategory.id]" [queryParams]="{category: service.category.id, subCategory: service.subCategory.id}" class="category" *ngIf="service.subCategory" class="breadcrumbs-item">{{service.subCategory.name}}</a>
+  </div>
+  <h1 class="good-name" *ngIf="good">{{good.name}}</h1>
+  <div class="good-info">
+    <div class="slider-container" *ngIf="good">
+      <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="30" [pagination]="{clickable: true}" class="mySwiper">
+        <ng-template swiperSlide *ngFor="let item of good.imageUrls" class="good-slide">
+          <img [src]="item" [alt]="good.name" class="image">
+        </ng-template>
+      </swiper>
+      <div class="image-favorite" *ngIf="good.rating === 5">
+        <img src="../../../../assets/favorite.png" alt="топ товар" class="favorite">
+    </div>
+    </div>
   </div>
 </div>
