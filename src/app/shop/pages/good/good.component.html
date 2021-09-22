@@ -9,14 +9,15 @@
   <h1 class="good-name">{{good.name}}</h1>
   <div class="good-info">
     <div class="slider-container">
-      <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="30" [pagination]="{clickable: true}" class="mySwiper">
+      <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="30" [pagination]="{clickable: true}" class="mySwiper"  *ngIf="good.imageUrls.length">
         <ng-template swiperSlide *ngFor="let item of good.imageUrls" class="good-slide">
-          <img [src]="item" [alt]="good.name" class="image">
+          <img [src]="item" [alt]="good.name" class="good-image">
         </ng-template>
       </swiper>
+      <img src="../../../../assets/default.jpeg" alt="фотография товара" class="image" *ngIf="!good.imageUrls.length">
       <div class="image-favorite" *ngIf="good.rating === 5">
         <img src="../../../../assets/favorite.png" alt="топ товар" class="favorite">
-    </div>
+      </div>
     </div>
     <div class="main-information">
       <h2 class="main-price">{{good.price}} руб.</h2>
@@ -33,5 +34,9 @@
       </div>
       <app-buttons [data]="good"></app-buttons>
     </div>
+  </div>
+  <div class="good-description-wrapper">
+    <h2 class="good-title">Информация о товаре:</h2>
+    <p class="good-description">{{good.description}}</p>
   </div>
 </div>

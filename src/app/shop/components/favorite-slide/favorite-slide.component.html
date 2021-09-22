@@ -1,10 +1,13 @@
 <a [routerLink]="['good/', data.id]" class="slide-wrapper" *ngIf="data">
   <div class="image-container">
     <img [src]="data.imageUrls[0]" alt="фотография товара" class="image">
+    <div class="image-favorite" *ngIf="data.rating === 5">
+      <img src="../../../../assets/favorite.png" alt="топ товар" class="favorite">
+    </div>
   </div>
   <div class="information">
     <div class="title">{{data.name}}</div>
-    <div class="rating-image">
+    <div class="rating-images">
         <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
         <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
         <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">

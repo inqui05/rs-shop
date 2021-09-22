@@ -10,6 +10,7 @@
   color: #000
 .image
   &-container
+    position: relative
     display: flex
     align-items: center
     justify-content: center
@@ -18,16 +19,30 @@
     overflow: hidden
   &-container img
     object-fit: contain
+  &-favorite
+    width: 35px
+    height: 35px
+    position: absolute
+    z-index: 10
+    top: 0
+    right: 0
+.favorite
+  width: 100%
+  height: 100%
 .information
   display: flex
   flex-direction: column
   align-items: center
   height: 100%
-  width: 300px
+  width: 280px
+  padding: 10px
 .rating
-  display: flex
-  align-items: center
-  margin-bottom: 30px
+  &-wrapper
+    display: flex
+    align-items: center
+    width: 160px
+    height: 20px
+    margin-bottom: 30px
   &-image
     display: flex
     justify-content: center
@@ -49,3 +64,5 @@
     font-weight: normal
 .title
   margin-bottom: 10px
+.img
+  height: 100%
