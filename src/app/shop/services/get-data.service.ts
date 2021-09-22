@@ -12,6 +12,8 @@ const PATH = 'http://localhost:3004/';
   providedIn: 'root'
 })
 export class GetDataService {
+  public allGoods: IGood[] = [];
+
   public randomGoods: IGood[] = [];
 
   public favoriteGoods: Array<IGood[]> = [];

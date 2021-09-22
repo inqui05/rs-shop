@@ -5,7 +5,7 @@
     <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" placeholder="Поиск товаров">
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option.name}}
+        <a [routerLink]="['/good/', option.id]" class="title">{{option.name}}</a>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>

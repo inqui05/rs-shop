@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UntilDestroy } from '@ngneat/until-destroy';
+
 import { forkJoin, Observable } from 'rxjs';
+
 import { IGood } from './shop/models/goods.model';
 import { GetDataService } from './shop/services/get-data.service';
 
@@ -33,6 +35,7 @@ export class AppComponent implements OnInit{
       forkJoin(observables).subscribe((val) => {
         const allGoods: IGood[] = [];
         val.forEach((element) => allGoods.push(...element));
+        this.service.allGoods = allGoods;
 
         const favorite = allGoods.filter((element) => element.rating === MAX_RATING);
         let tempArr: IGood[] = [];

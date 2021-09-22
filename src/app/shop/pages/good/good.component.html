@@ -14,7 +14,9 @@
           <img [src]="item" [alt]="good.name" class="good-image">
         </ng-template>
       </swiper>
-      <img src="../../../../assets/default.jpeg" alt="фотография товара" class="image" *ngIf="!good.imageUrls.length">
+      <div class="default-wrapper">
+        <img src="../../../../assets/default.jpeg" alt="фотография товара" class="default-image" *ngIf="!good.imageUrls.length">
+      </div>
       <div class="image-favorite" *ngIf="good.rating === 5">
         <img src="../../../../assets/favorite.png" alt="топ товар" class="favorite">
       </div>

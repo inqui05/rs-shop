@@ -1,6 +1,7 @@
 <a [routerLink]="['good/', data.id]" *ngIf="data" class="slide">
   <div class="image-container">
-    <img [src]="data.imageUrls[0]" [alt]="data.name" class="image">
+    <img [src]="data.imageUrls[0]" [alt]="data.name" class="image" *ngIf="data.imageUrls.length">
+    <img src="../../../../assets/default.jpeg" alt="фотография товара" class="default-image" *ngIf="!data.imageUrls.length">
     <div class="image-favorite" *ngIf="data.rating === 5">
         <img src="../../../../assets/favorite.png" alt="топ товар" class="favorite">
       </div>
