@@ -15,30 +15,30 @@
 
 <mat-menu #appliances="matMenu">
   <div class="wrapper" *ngIf="service.categories[0]">
-    <a [routerLink]="['category/sub/', category.id]" *ngFor="let category of service.categories[0].subCategories" mat-menu-item>{{category.name}}</a>
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[0].id, subCategory: category.id}" *ngFor="let category of service.categories[0].subCategories" mat-menu-item>{{category.name}}</a>
   </div>
 </mat-menu>
 
 <mat-menu #electronics="matMenu">
   <div class="wrapper" *ngIf="service.categories[1]">
-    <a [routerLink]="['category/sub/', category.id]" *ngFor="let category of service.categories[1].subCategories" mat-menu-item>{{category.name}}</a>
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[1].id, subCategory: category.id}" *ngFor="let category of service.categories[1].subCategories" mat-menu-item>{{category.name}}</a>
   </div>
 </mat-menu>
 
 <mat-menu #computers="matMenu">
   <div class="wrapper" *ngIf="service.categories[2]">
-    <a [routerLink]="['category/sub/', category.id]" *ngFor="let category of service.categories[2].subCategories" mat-menu-item>{{category.name}}</a>
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[2].id, subCategory: category.id}" *ngFor="let category of service.categories[2].subCategories" mat-menu-item>{{category.name}}</a>
   </div>
 </mat-menu>
 
 <mat-menu #furniture="matMenu">
   <div class="wrapper" *ngIf="service.categories[3]">
-    <a [routerLink]="['category/sub/', category.id]" *ngFor="let category of service.categories[3].subCategories" mat-menu-item>{{category.name}}</a>
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[3].id, subCategory: category.id}" *ngFor="let category of service.categories[3].subCategories" mat-menu-item>{{category.name}}</a>
   </div>
 </mat-menu>
 
 <mat-menu #hobbies="matMenu">
   <div class="wrapper" *ngIf="service.categories[4]">
-    <a [routerLink]="['category/sub/', category.id]" *ngFor="let category of service.categories[4].subCategories" mat-menu-item>{{category.name}}</a>
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[4].id, subCategory: category.id}" *ngFor="let category of service.categories[4].subCategories" mat-menu-item>{{category.name}}</a>
   </div>
 </mat-menu>
