@@ -15,6 +15,7 @@ import { RatingComponent } from './components/rating/rating.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { AvailableNowDirective } from './directives/available-now.directive';
 import { GoodComponent } from './pages/good/good.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { GoodComponent } from './pages/good/good.component';
     ButtonsComponent,
     AvailableNowDirective,
     GoodComponent,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,

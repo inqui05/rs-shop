@@ -4,8 +4,11 @@ import { UntilDestroy } from '@ngneat/until-destroy';
 import { forkJoin, Observable } from 'rxjs';
 
 import { IGood } from './shop/models/goods.model';
+import { FavoritesCartService } from './shop/services/favorites-cart.service';
 import { GetDataService } from './shop/services/get-data.service';
 
+const LOCAL_STORAGE_NAME = 'rs-shop_accessToken';
+const TOKEN = 'Bearer 58ebfdf7b2bab0bdb97711f4';
 const MAX_RATING = 5;
 
 @UntilDestroy({ checkProperties: true })
@@ -17,10 +20,15 @@ const MAX_RATING = 5;
 export class AppComponent implements OnInit{
   title = 'shop';
 
-  constructor(public service: GetDataService) {}
+  constructor(private service: GetDataService, private userService: FavoritesCartService) {
+    if (!localStorage.getItem(LOCAL_STORAGE_NAME)) {
+      localStorage.setItem(LOCAL_STORAGE_NAME, TOKEN);
+    }
+  }
 
   ngOnInit() {
     this.getDataForSliders();
+    this.getUserData();
   }
 
   private getDataForSliders(): void {
@@ -49,6 +57,19 @@ export class AppComponent implements OnInit{
         });
         this.service.randomGoods = allGoods.sort(() => Math.random() - 0.5).slice(0,10);
       });
+    });
+  }
+
+  private getUserData(): void {
+    const observables: Observable<IGood>[] = [];
+
+    this.userService.getCartAndFavoritesData().subscribe((data) => {
+      this.userService.cart = data.cart;
+      this.userService.favoriteId = data.favorites;
+      data.favorites.forEach((id: string) => {
+        observables.push(this.service.getGood(id));
+      });
+      forkJoin(observables).subscribe((value) => this.userService.favoriteGood.push(...value));
     });
   }
 }

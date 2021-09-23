@@ -6,5 +6,5 @@
   </div>
   <button class="log-in">Войти</button>
   <button mat-menu-item><img src="../../../../assets/basket.svg" alt="Моя корзина" class="icon"><span>Корзина</span></button>
-  <button mat-menu-item><img src="../../../../assets/liked.svg" alt="Избранные товары" class="icon"><span>Избранные товары</span></button>
+  <a [routerLink]="['/favorites']" mat-menu-item><img src="../../../../assets/liked.svg" alt="Избранные товары" class="icon"><span>Избранные товары</span></a>
 </mat-menu>
