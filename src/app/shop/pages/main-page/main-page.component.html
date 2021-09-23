@@ -1,5 +1,5 @@
 <main class="main-page">
-  <div class="slider-title">Случайный товар</div>
+  <h1 class="slider-title">Случайный товар</h1>
   <swiper *ngIf="service.randomGoods.length; else loading"
       [spaceBetween]="30"
       [centeredSlides]="true"
@@ -13,7 +13,7 @@
       class="mySwiper">
       <ng-template *ngFor="let item of service.randomGoods" swiperSlide class="random-slide"><app-slide [data]="item"></app-slide></ng-template>
   </swiper>
-  <div class="slider-title second-title">Популярные товары</div>
+  <h2 class="slider-title second-title">Популярные товары</h2>
   <swiper [navigation]="true" class="myFavorite" *ngIf="service.randomGoods.length; else loading">
     <ng-template class="favorite-slide" *ngFor="let item of service.favoriteGoods" swiperSlide>
       <app-favorite-slide *ngFor="let element of item" [data]="element"></app-favorite-slide>
@@ -24,4 +24,15 @@
       <img src="../../../../assets/loading.svg" alt="Загрузка товаров" class="loading-image">
     </div>
   </ng-template>
+  <h3 class="app">О приложении</h3>
+  <div class="app-description">Приложение повторяет работу популярного в Беларуси интернет-магазина 21vek.by. На главной странице присутствует два слайдера, первый показывает
+    случайный товары, второй показывает только товары с максимальным рейтингом. Категории используются для удобного разделения товаров по функциональному назначению и содержат
+    только перечень подкатегорий. При переходе на подкатегории пользователь получает товары выбранного профиля. Для удобства и скорость загрузки, отображается только 10 товаров,
+    но пользователь может воспользоваться кнопкой “Показать больше” и получить еще 10 товаров и т.д. Так же предусмотрена сортировка по цене и популярности товаров, которая
+    работает как в сторону убывания, так и возрастания.
+    <br><br>
+    Кнопки “В корзину” и “В избранное” меняют свой вид при активации. Товар из списка избранных можно убрать как на странице
+    избранные товары, так и непосредственно в карточке товара. А вот удалить товар из корзины можно непосредственно в самой корзине. К сожалению, на момент deadline приложение
+    не окончено, не хватило буквально одних ударных выходных, поэтому, с грустью предлагаю протестировать то, что я успел реализовать.
+ </div>
 </main>
