@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UntilDestroy } from '@ngneat/until-destroy';
 
-const PATH = 'http://ip-api.com/json/?lang=ru&fields=country,city';
+const PATH = 'https://ipwhois.app/json/?objects=country,city&lang=ru';
 
 interface IPlace {
   country: string,
