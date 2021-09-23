@@ -33,13 +33,17 @@ export class SearchComponent implements OnInit {
       );
   }
 
-  displayFn(user: IGood): string {
-    return user && user.name ? user.name : '';
+  public displayFn(good: IGood): string {
+    return good && good.name ? good.name : '';
   }
 
   private _filter(name: string): IGood[] {
     const filterValue = name.toLowerCase();
 
     return this.service.allGoods.filter(option => option.name.toLowerCase().includes(filterValue));
+  }
+
+  public clearInput() {
+    this.myControl.setValue('');
   }
 }
