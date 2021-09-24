@@ -1,0 +1,6 @@
+<div class="favorite-wrapper">
+  <h1 class="favorite-name">Избранные товары</h1>
+  <div class="card-wrapper">
+    <app-card *ngFor="let good of userService.favoriteGood" [data]="good"></app-card>
+  </div>
+</div>

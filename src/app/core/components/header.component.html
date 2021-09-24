@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="header__info-wrapper">
+    <div class="header__info">
+      <app-location></app-location>
+      <div class="header__addition-info">
+        <app-contacts></app-contacts>
+        <div class="header__call-center">
+          <img src="../../../assets/watch.svg" alt="watch" class="header__call-center-image">
+          <div class="header__call-center-text">контакт-центр с 8:00 до 22:00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__navigation-wrapper">
+    <div class="header__navigation">
+      <a [routerLink]="['/']" class="header__logo-wrapper">
+        <img src="../../../assets/logo.svg" alt="логотип" class="header__logo">
+      </a>
+      <app-catalog></app-catalog>
+      <app-search></app-search>
+      <app-user-profile></app-user-profile>
+      <a href="#" class="basket"><img src="../../../../assets/basket.svg" alt="Моя корзина" class="icon"><span class="text">Корзина</span></a>
+    </div>
+  </div>
+  <div class="header__menu-wrapper">
+    <div class="header__menu" *ngIf="service.categories.length">
+      <a [routerLink]="['category/', category.id]" *ngFor="let category of service.categories" class="header__menu-item">{{category.name}}</a>
+    </div>
+  </div>
+</header>

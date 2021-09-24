@@ -1,0 +1,6 @@
+<div class="buttons" *ngIf="data">
+  <button class="button basket-add" *ngIf="!checkCart()" (click)="addGoodToCart()">В корзину</button>
+  <a class="button basket-added" *ngIf="checkCart()">В корзине</a>
+  <button class="button favorite-add" *ngIf="!checkFavorites()" (click)="addGoodToFavorites()">В избранное</button>
+  <button class="button favorite-remove" *ngIf="checkFavorites()" (click)="removeFavoriteGood(data.id)">Убрать из избранного</button>
+</div>

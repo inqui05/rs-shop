@@ -1,0 +1,124 @@
+@import "~swiper/css"
+@import "~swiper/css/pagination"
+.slider-container
+  position: relative
+  width: 700px
+  height: 400px
+.swiper
+  width: 100%
+  height: 100%
+  &-slide
+    text-align: center
+    font-size: 18px
+    background: #fff
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    -webkit-justify-content: center
+    justify-content: center
+    -webkit-box-align: center
+    -ms-flex-align: center
+    -webkit-align-items: center
+    align-items: center
+  &-slide
+    overflow: hidden
+  &-slide img
+    object-fit: scale-down
+.good
+  &-wrapper
+    width: 1200px
+    min-height: 45vh
+    margin: auto
+    padding: 30px 0
+  &-name
+    margin-bottom: 20px
+  &-slide
+    height: 100%
+  &-info
+    display: flex
+    margin-bottom: 40px
+  &-description
+    min-width: 300px
+    max-width: 700px
+  &-title
+    margin-bottom: 20px
+.breadcrumbs
+  display: flex
+  margin-bottom: 30px
+  &-item
+    margin: 0 5px
+    color: #000
+.image-favorite
+  width: 50px
+  height: 50px
+  position: absolute
+  z-index: 10
+  top: 0
+  right: 0
+.favorite
+  width: 100%
+  height: 100%
+.main
+  &-information
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    width: 250px
+  &-price
+    font-size: 30px
+    line-height: 35px
+    margin-bottom: 15px
+.availability
+  display: flex
+  align-items: center
+  margin-bottom: 15px
+.rating
+  margin-bottom: 15px
+  &-image
+    width: 150px
+    height: 35px
+    & .img
+      height: 28px
+.default-wrapper
+  width: 400px
+  height: 400px
+  overflow: hidden
+@media screen and (min-width: 899px) and (max-width: 1199px)
+  .slider-container
+    position: relative
+    width: 70%
+    height: 350px
+  .good
+    &-wrapper
+      width: 900px
+  .default-wrapper
+    width: 70%
+    height: 350px
+@media screen and (max-width: 899px)
+  .slider-container
+    width: 70%
+    height: 350px
+  .good
+    &-wrapper
+      width: 768px
+    &-name
+      line-height: 30px
+  .default-wrapper
+    width: 70%
+    height: 350px
+@media screen and (max-width: 767px)
+  .slider-container
+    width: 60%
+    height: 250px
+  .good
+    &-wrapper
+      width: 95%
+    &-name
+      line-height: 30px
+  .default-wrapper
+    width: 60%
+    height: 250px

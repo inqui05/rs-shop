@@ -1,0 +1,13 @@
+<div class="header__contacts">
+  <a href="https://www.viber.com/21vek.by" class="header__viber"  target="_blank"><img src="../../../assets/viber.svg" alt="viber" class="mat-menu-image" > Viber</a>
+  <div class="header__a1"><img src="../../../assets/a1.svg" alt="A1" class="mat-menu-image"> +375 29 302 10 21</div>
+  <button mat-button [matMenuTriggerFor]="menu">Еще</button>
+  <mat-menu #menu="matMenu">
+    <button class="header-not-button" mat-menu-item><img src="../../../../assets/life.svg" alt="Оператор life:)" class="mat-menu-image"> +375 25 502 10 21</button>
+    <button class="header-not-button" mat-menu-item><img src="../../../../assets/phone.svg" alt="Стационарный телефон" class="mat-menu-image"> +375 17 302 10 21</button>
+    <a href="http://t.me/e21vekbot" mat-menu-item target="_blank"><img src="../../../../assets/telegram.svg" alt="telegram" class="mat-menu-image"> Telegram</a>
+    <a href="mailto:21@21vek.by" mat-menu-item target="_blank"><img src="../../../../assets/mail.svg" alt="email" class="mat-menu-image"> Почта</a>
+    <button mat-menu-item><img src="../../../../assets/phone-call.svg" alt="call me" class="mat-menu-image"> Заказать звонок</button>
+  </mat-menu>
+</div>
+

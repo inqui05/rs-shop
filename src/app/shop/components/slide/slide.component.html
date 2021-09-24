@@ -1,0 +1,60 @@
+<a [routerLink]="['good/', data.id]" *ngIf="data" class="slide">
+  <div class="image-container">
+    <img [src]="data.imageUrls[0]" [alt]="data.name" class="image" *ngIf="data.imageUrls.length">
+    <img src="../../../../assets/default.jpeg" alt="фотография товара" class="default-image" *ngIf="!data.imageUrls.length">
+    <div class="image-favorite" *ngIf="data.rating === 5">
+        <img src="../../../../assets/favorite.png" alt="топ товар" class="favorite">
+      </div>
+  </div>
+  <div class="information">
+    <p class="name">{{data.name}}</p>
+    <div class="rating-wrapper" *ngIf="data.rating >= 4.5">Рейтинг:&nbsp;
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    </div>
+    <div class="rating-wrapper" *ngIf="data.rating >= 3.5 && data.rating <= 4.5">Рейтинг:&nbsp;
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    </div>
+    <div class="rating-wrapper" *ngIf="data.rating >= 2.5 && data.rating <= 3.5">Рейтинг:&nbsp;
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    </div>
+    <div class="rating-wrapper" *ngIf="data.rating >= 1.5 && data.rating <= 2.5">Рейтинг:&nbsp;
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    </div>
+    <div class="rating-wrapper" *ngIf="data.rating >= 0.5 && data.rating <= 1.5">Рейтинг:&nbsp;
+      <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    </div>
+    <div class="rating-wrapper" *ngIf="data.rating < 0.5">Рейтинг:&nbsp;
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+      <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    </div>
+    <div class="price">Стоимость:&nbsp;<p class="price-value">{{data.price | number:'1.2'}} руб.</p></div>
+  </div>
+  <div class="description">
+    <div class="title">Особенности товара:</div>
+    <p>{{data.description}}</p>
+  </div>
+</a>
+

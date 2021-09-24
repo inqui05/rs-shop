@@ -1,0 +1,98 @@
+.footer
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  &__contact-wrapper,
+  &__social-networks,
+  &__info
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 37px
+    width: 1200px
+    margin: auto
+  &__social-networks
+    justify-content: center
+    height: 61px
+.contact
+  display: flex
+  align-items: center
+.viber
+  justify-content: space-between
+  text-decoration: none
+  color: black
+.social
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 35px
+  height: 35px
+  border-radius: 50%
+  box-shadow: 1px 1px 1px 1px rgba(77,63,63,0.15)
+  &:not(:last-child)
+    margin-right: 10px
+.vk
+  fill: #447dbd
+  transition: all 0.2s easy-out
+  &:hover
+    background-color: #447dbd
+    .vk-image
+      fill: #fff
+.facebook
+  fill: #4469b0
+  transition: all 0.2s easy-out
+  &:hover
+    background-color: #4469b0
+    .facebook-image
+      fill: #fff
+.instagram-image
+  width: 24px
+  height: 24px
+.instagram
+  transition: all 0.2s easy-out
+  &:hover
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)
+    path
+      fill: #fff
+.youtube
+  transition: all 0.2s easy-out
+  &:hover
+    background-color: #ff2638
+    path
+      fill: #fff
+.ok
+  transition: all 0.2s easy-out
+  &:hover
+    background-color: #fa9019
+    path
+      fill: #fff
+@media screen and (min-width: 899px) and (max-width: 1199px)
+  .footer
+    &__contact-wrapper,
+    &__social-networks,
+    &__info
+      width: 900px
+@media screen and (max-width: 899px)
+  .footer
+    &__contact-wrapper,
+    &__social-networks,
+    &__info
+      width: 768px
+@media screen and (max-width: 767px)
+  .footer
+    &__contact-wrapper,
+    &__social-networks,
+    &__info
+      flex-wrap: wrap
+      height: 50px
+      width: 95%
+      margin: auto
+    &__social-networks
+      justify-content: center
+      height: 61px
+  .contact
+    display: flex
+    justify-content: flex-start
+    width: 150px
+    margin-bottom: 10px

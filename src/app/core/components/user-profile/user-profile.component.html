@@ -1,0 +1,10 @@
+<img src="../../../../assets/profile.svg" alt="Посмотреть аккаунт" class="log-in-image">
+<button mat-button [matMenuTriggerFor]="menu"><span class="text">Аккаунт</span></button>
+<mat-menu #menu="matMenu">
+  <div class="user-avatar-wrapper">
+    <img src="../../../../assets/user-profile.svg" alt="аватар пользователя" class="profile-image">
+  </div>
+  <button class="log-in">Войти</button>
+  <button mat-menu-item><img src="../../../../assets/basket.svg" alt="Моя корзина" class="icon"><span>Корзина</span></button>
+  <a [routerLink]="['/favorites']" mat-menu-item><img src="../../../../assets/liked.svg" alt="Избранные товары" class="icon"><span>Избранные товары</span></a>
+</mat-menu>

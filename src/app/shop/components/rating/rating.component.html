@@ -1,0 +1,46 @@
+<div class="rating-wrapper" *ngIf="data; else zero">
+  <div class="rating-image" *ngIf="data >= 4.5">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+  </div>
+  <div class="rating-image" *ngIf="data >= 3.5 && data <= 4.5">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+  </div>
+  <div class="rating-image" *ngIf="data >= 2.5 && data <= 3.5">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+  </div>
+  <div class="rating-image" *ngIf="data >= 1.5 && data <= 2.5">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+  </div>
+  <div class="rating-image" *ngIf="data >= 0.5 && data <= 1.5">
+    <img src="../../../../assets/filled-star.svg" alt="filled star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+  </div>
+</div>
+<ng-template #zero>
+  <div class="rating-image">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+    <img src="../../../../assets/empty-star.svg" alt="empty star" class="img">
+  </div>
+</ng-template>

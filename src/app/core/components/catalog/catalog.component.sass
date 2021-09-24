@@ -1,0 +1,64 @@
+:host
+  width: 159px
+  height: 40px
+  position: relative
+.header
+  &__catalog
+    &-category
+      position: relative
+      top: 25px
+      z-index: 100
+      width: 1200px
+      height: 700px
+      background-color: grey
+    &-button
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      height: 100%
+      background-color: #fff
+      border: 1px solid #d5d7db
+      border-radius: 20px
+      transition: 0.3s linear
+      padding: 0 10px
+      &_icon
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 25px
+        height: 25px
+        border-radius: 50%
+        background-color: #e52e6b
+        &-image
+          width: 11px
+          height: 11px
+.button-on
+  &:hover
+    border: 1px solid transparent
+.button-off
+  background-color: #ebedf0
+  border: none
+.icon-off
+  background-color: #fff
+.mat-menu-item
+  display: flex
+  align-items: center
+@media screen and (min-width: 899px) and (max-width: 1199px)
+  :host
+    width: 139px
+  .header
+    &__catalog
+      &-category
+        width: 900px
+@media screen and (max-width: 899px)
+  :host
+    width: 49px
+  .header
+    &__catalog
+      &-category
+        width: 768px
+      &-button
+        border: none
+  .header__catalog-button_text
+    display: none

@@ -1,0 +1,44 @@
+<button mat-button class="header__catalog-button button-on" [matMenuTriggerFor]="shopCategories">
+  <div class="header__catalog-button_icon">
+    <img src="../../../../assets/menu-icon.svg" alt="меню" class="header__catalog-button_icon-image">
+  </div>
+  <p class="header__catalog-button_text">Каталог товаров</p>
+</button>
+
+<mat-menu #shopCategories="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="appliances" *ngIf="service.categories.length"><img src="../../../../assets/appliances.svg" alt="Бытовая техника" class="category-image">&nbsp;Бытовая техника</button>
+  <button mat-menu-item [matMenuTriggerFor]="electronics" *ngIf="service.categories.length"><img src="../../../../assets/electronics.svg" alt="Бытовая техника" class="category-image">&nbsp;Электроника</button>
+  <button mat-menu-item [matMenuTriggerFor]="computers" *ngIf="service.categories.length"><img src="../../../../assets/computers.svg" alt="Бытовая техника" class="category-image">&nbsp;Компьютеры и периферия</button>
+  <button mat-menu-item [matMenuTriggerFor]="furniture" *ngIf="service.categories.length"><img src="../../../../assets/furniture.svg" alt="Бытовая техника" class="category-image">&nbsp;Мебель</button>
+  <button mat-menu-item [matMenuTriggerFor]="hobbies" *ngIf="service.categories.length"><img src="../../../../assets/hobby.svg" alt="Бытовая техника" class="category-image">&nbsp;Досуг и хобби</button>
+</mat-menu>
+
+<mat-menu #appliances="matMenu">
+  <div class="wrapper" *ngIf="service.categories[0]">
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[0].id, subCategory: category.id}" *ngFor="let category of service.categories[0].subCategories" mat-menu-item>{{category.name}}</a>
+  </div>
+</mat-menu>
+
+<mat-menu #electronics="matMenu">
+  <div class="wrapper" *ngIf="service.categories[1]">
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[1].id, subCategory: category.id}" *ngFor="let category of service.categories[1].subCategories" mat-menu-item>{{category.name}}</a>
+  </div>
+</mat-menu>
+
+<mat-menu #computers="matMenu">
+  <div class="wrapper" *ngIf="service.categories[2]">
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[2].id, subCategory: category.id}" *ngFor="let category of service.categories[2].subCategories" mat-menu-item>{{category.name}}</a>
+  </div>
+</mat-menu>
+
+<mat-menu #furniture="matMenu">
+  <div class="wrapper" *ngIf="service.categories[3]">
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[3].id, subCategory: category.id}" *ngFor="let category of service.categories[3].subCategories" mat-menu-item>{{category.name}}</a>
+  </div>
+</mat-menu>
+
+<mat-menu #hobbies="matMenu">
+  <div class="wrapper" *ngIf="service.categories[4]">
+    <a [routerLink]="['/category/sub/', category.id]" [queryParams]="{category: service.categories[4].id, subCategory: category.id}" *ngFor="let category of service.categories[4].subCategories" mat-menu-item>{{category.name}}</a>
+  </div>
+</mat-menu>

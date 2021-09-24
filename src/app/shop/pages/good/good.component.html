@@ -1,0 +1,44 @@
+<div class="good-wrapper" *ngIf="good">
+  <div class="breadcrumbs" *ngIf="service.category && service.subCategory">
+    <a [routerLink]="['/']" class="breadcrumbs-item">Главная страница</a>
+    <p class="breadcrumbs-item">></p>
+    <a [routerLink]="['/category/', service.category.id]" class="category" class="breadcrumbs-item">{{service.category.name}}</a>
+    <p class="breadcrumbs-item">></p>
+    <a [routerLink]="['/category/sub/', service.subCategory.id]" [queryParams]="{category: service.category.id, subCategory: service.subCategory.id}" class="category" *ngIf="service.subCategory" class="breadcrumbs-item">{{service.subCategory.name}}</a>
+  </div>
+  <h1 class="good-name">{{good.name}}</h1>
+  <div class="good-info">
+    <div class="slider-container">
+      <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="30" [pagination]="{clickable: true}" class="mySwiper"  *ngIf="good.imageUrls.length">
+        <ng-template swiperSlide *ngFor="let item of good.imageUrls" class="good-slide">
+          <img [src]="item" [alt]="good.name" class="good-image">
+        </ng-template>
+      </swiper>
+      <div class="default-wrapper">
+        <img src="../../../../assets/default.jpeg" alt="фотография товара" class="default-image" *ngIf="!good.imageUrls.length">
+      </div>
+      <div class="image-favorite" *ngIf="good.rating === 5">
+        <img src="../../../../assets/favorite.png" alt="топ товар" class="favorite">
+      </div>
+    </div>
+    <div class="main-information">
+      <h2 class="main-price">{{good.price | number:'1.2'}} руб.</h2>
+      <div class="availability">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="svg">
+          <path [appAvailableNow]="good.availableAmount" fill-rule="evenodd" clip-rule="evenodd" d="M13 9C13 11.7614 10.7614 14 8 14C5.23858 14 3 11.7614 3 9C3 6.23858 5.23858 4 8 4C10.7614 4 13 6.23858 13 9ZM14 9C14 12.3137 11.3137 15
+            8 15C4.68629 15 2 12.3137 2 9C2 5.68629 4.68629 3 8 3C11.3137 3 14 5.68629 14 9ZM5.92426 8.07574L7.5 9.65147L10.5757 6.57574L11.4243 7.42426L7.92426 10.9243C7.81174 11.0368 7.65913
+            11.1 7.5 11.1C7.34087 11.1 7.18826 11.0368 7.07574 10.9243L5.07574 8.92426L5.92426 8.07574Z" fill="#999999"/>
+        </svg>
+        <p class="availability-text">&nbsp;В наличии</p>
+      </div>
+      <div class="rating">
+        <app-rating [data]="good.rating"></app-rating>
+      </div>
+      <app-buttons [data]="good"></app-buttons>
+    </div>
+  </div>
+  <div class="good-description-wrapper">
+    <h2 class="good-title">Информация о товаре:</h2>
+    <p class="good-description">{{good.description}}</p>
+  </div>
+</div>
