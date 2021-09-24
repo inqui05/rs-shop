@@ -67,3 +67,32 @@
     background-color: #fa9019
     path
       fill: #fff
+@media screen and (min-width: 899px) and (max-width: 1199px)
+  .footer
+    &__contact-wrapper,
+    &__social-networks,
+    &__info
+      width: 900px
+@media screen and (max-width: 899px)
+  .footer
+    &__contact-wrapper,
+    &__social-networks,
+    &__info
+      width: 768px
+@media screen and (max-width: 767px)
+  .footer
+    &__contact-wrapper,
+    &__social-networks,
+    &__info
+      flex-wrap: wrap
+      height: 50px
+      width: 95%
+      margin: auto
+    &__social-networks
+      justify-content: center
+      height: 61px
+  .contact
+    display: flex
+    justify-content: flex-start
+    width: 150px
+    margin-bottom: 10px

@@ -44,3 +44,21 @@
 .mat-menu-item
   display: flex
   align-items: center
+@media screen and (min-width: 899px) and (max-width: 1199px)
+  :host
+    width: 139px
+  .header
+    &__catalog
+      &-category
+        width: 900px
+@media screen and (max-width: 899px)
+  :host
+    width: 49px
+  .header
+    &__catalog
+      &-category
+        width: 768px
+      &-button
+        border: none
+  .header__catalog-button_text
+    display: none

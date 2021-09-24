@@ -15,7 +15,7 @@
     </svg>
     <p class="availability-text">В наличии</p>
   </div>
-  <p class="price">{{data.price}}&nbsp;руб.</p>
+  <p class="price">{{data.price | number:'1.2'}}&nbsp;руб.</p>
   <app-rating [data]="data.rating" class="rating"></app-rating>
   <app-buttons [data]="data"></app-buttons>
 </div>
